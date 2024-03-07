@@ -1,17 +1,26 @@
+import { ProductCategoryRow } from '../product-category-row';
+import { ProductRow } from '../product-row';
+
 export const ProductTable = ({ products }) => {
 	const rows = [];
 	let lastCategory = null;
-
+	products?.forEach((product) => {
+		if (product?.category !== lastCategory) {
+			rows.push(<ProductCategoryRow category={product?.category} key={product?.category} />);
+		}
+		rows.push(<ProductRow product={product} key={product?.name} />);
+		lastCategory = product?.category;
+	});
 	return (
 		<div>
-			<table>
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Price</th>
+			<table className=' w-full border border-black border-collapse'>
+				<thead className='border border-black'>
+					<tr className='border border-black'>
+						<th className='border border-black'>Name</th>
+						<th className='border border-black'>Price</th>
 					</tr>
 				</thead>
-				<tbody></tbody>
+				<tbody>{rows}</tbody>
 			</table>
 		</div>
 	);

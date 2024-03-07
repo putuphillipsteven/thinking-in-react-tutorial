@@ -1,3 +1,4 @@
+import { ProductTable } from '../components/product-table';
 import { SearchBar } from '../components/search-bar';
 
 export const FilterableProductTable = ({ products }) => {
@@ -6,8 +7,9 @@ export const FilterableProductTable = ({ products }) => {
 			<div className='header'>
 				<h2 className='text-xl font-semibold font-mono'>Filterable Product Table</h2>
 			</div>
-			<div className='body'>
+			<div className='body flex flex-col gap-x-2'>
 				<SearchBar />
+				<ProductTable products={products} />
 			</div>
 		</div>
 	);
