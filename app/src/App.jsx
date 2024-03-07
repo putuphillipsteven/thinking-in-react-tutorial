@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { FilterableProductTable } from './components/filterable-product-table/container';
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
-		<div>
-			<p className='font-mono font-bold'>Test</p>
+		<div className='bg-gray-200 max-w-screen min-h-screen flex flex-col items-center p-4 gap-y-2'>
+			<div className='header p-2'>
+				<h1 className='font-mono font-semibold text-3xl'>Thingking In React</h1>
+			</div>
+			<div className='body'>
+				<FilterableProductTable />
+			</div>
 		</div>
 	);
 }
