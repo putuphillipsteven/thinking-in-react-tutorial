@@ -1,4 +1,5 @@
 import { FilterableProductTable } from './components/filterable-product-table/container';
+import { PRODUCTS } from './components/filterable-product-table/utils/product';
 
 function App() {
 	return (
@@ -7,7 +8,7 @@ function App() {
 				<h1 className='font-mono font-semibold text-3xl'>Thingking In React</h1>
 			</div>
 			<div className='body'>
-				<FilterableProductTable />
+				<FilterableProductTable products={PRODUCTS} />
 			</div>
 		</div>
 	);

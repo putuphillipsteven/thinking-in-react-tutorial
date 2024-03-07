@@ -1,6 +1,6 @@
 import { SearchBar } from '../components/search-bar';
 
-export const FilterableProductTable = () => {
+export const FilterableProductTable = ({ products }) => {
 	return (
 		<div className='p-2 flex flex-col items-center gap-y-4'>
 			<div className='header'>
